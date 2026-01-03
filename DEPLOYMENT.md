@@ -20,11 +20,20 @@
 
 3. **Create Web Service:**
    - Click "New +" → "Web Service"
-   - Connect your GitHub repository
-   - Render will auto-detect PHP
-   - Build Command: (leave empty or use `composer install` if needed)
-   - Start Command: `php -S 0.0.0.0:$PORT -t public public/index.php` OR just leave default
-   - For standard PHP: Start Command: `php -S 0.0.0.0:$PORT`
+   - Connect your GitHub repository: `https://github.com/Sahilr2501/rmcl`
+   - **IMPORTANT:** Choose one of these options:
+
+   **Option A: Use Dockerfile (Recommended - Already Created)**
+   - Render will automatically detect the Dockerfile
+   - Build Command: (leave empty)
+   - Start Command: (leave empty - Dockerfile handles it)
+   - Environment: Docker
+   
+   **Option B: Use Native PHP (Alternative)**
+   - In Render settings, set Environment to "PHP"
+   - Build Command: (leave empty)
+   - Start Command: `php -S 0.0.0.0:$PORT`
+   - Root Directory: `/` (or leave default)
 
 4. **Environment Variables (Important!):**
    - Add these in Render dashboard:
@@ -82,4 +91,20 @@ git remote add origin https://github.com/YOUR_USERNAME/rmcl.git
 # Push
 git push -u origin main
 ```
+
+## 🐳 Dockerfile Setup (For Render)
+
+A `Dockerfile` has been created for you. Render will automatically use it.
+
+**If you still get Dockerfile errors:**
+1. Make sure the Dockerfile is in the root directory (it is now)
+2. In Render dashboard → Settings → Environment, ensure "Docker" is selected
+3. Or switch to "PHP" environment and use the native PHP option
+
+## ✅ Files Created for Deployment
+
+- ✅ `Dockerfile` - For Docker-based deployment
+- ✅ `render.yaml` - Render configuration (optional)
+- ✅ `.htaccess` - Apache configuration
+- ✅ `.gitignore` - Excludes sensitive files
 

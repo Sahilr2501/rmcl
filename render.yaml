@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: rmcl-website
+    runtime: php
+    buildCommand: ""
+    startCommand: php -S 0.0.0.0:$PORT
+    envVars:
+      - key: PHP_VERSION
+        value: 8.2
+    # Uncomment and add your environment variables here:
+    # - key: SMTP_HOST
+    #   value: smtp.gmail.com
+    # - key: SMTP_USER
+    #   value: your-email@gmail.com
+    # - key: SMTP_PASS
+    #   value: your-app-password
+    # - key: SMTP_PORT
+    #   value: 587
+
