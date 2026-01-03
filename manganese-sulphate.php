@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manganese Sulphate (MnSO₄) | Rajasthan Minerals & Chemicals</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .content-box {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 14px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-box {
+            background-color: #f0f8ff;
+            border-left: 5px solid #0d6efd;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .core-apps li, .extended-apps li {
+            padding-left: 10px;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        /* HERO IMAGE – FULL IMAGE, NO CROP, NO TEXT */
+        .hero-image {
+            width: 100%;
+            background: #000;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Hover dropdown (desktop only) */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover>.dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+
+        .dropdown-menu {
+            transition: all 0.25s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <?php include 'nav.php'; ?>
+
+    <!-- HERO IMAGE -->
+    <section class="hero-image">
+        <picture>
+            <!-- Mobile Image -->
+            <source media="(max-width: 767px)" srcset="img/manganese-sulphate-small.png">
+
+            <!-- Desktop Image -->
+            <img src="img/manganese-sulphate-banner.jpg" alt="Manganese Sulphate Crystals">
+        </picture>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <!-- MAIN CONTENT -->
+                <div class="col-lg-8">
+                    <div class="content-box">
+
+                        <h1 class="fw-bold mb-3">
+                            Manganese Sulphate – MnSO<sub>4</sub>
+                        </h1>
+
+                        <p><strong>Formula : MnSO<sub>4</sub></strong></p>
+
+                        <h5 class="fw-semibold mb-3">Description</h5>
+                        <p>
+                            Manganese Sulphate is a pale pink, crystalline inorganic salt that is highly soluble in water. It is one of the most important manganese compounds, widely used as a source of manganese in fertilizers, animal feed, and industrial applications. Known for its role in promoting plant growth, manufacturing specialty chemicals, and serving as a micronutrient supplement, Manganese Sulphate is valued across agriculture, pharmaceuticals, and chemical industries.
+                        </p>
+
+                        <div class="highlight-box">
+                            <h4 class="fw-semibold mb-3">Key Highlights</h4>
+                            <ul class="mb-0">
+                                <li><strong>High Solubility</strong> – Easily dissolves in water for effective absorption.</li>
+                                <li><strong>Multiple Grades Available</strong> – Supplied in technical, agricultural, and feed-grade forms.</li>
+                                <li><strong>Rich Source of Manganese</strong> – Essential trace element for plants, animals, and humans.</li>
+                                <li><strong>Versatile Uses</strong> – Widely applied in agriculture, industry, and healthcare.</li>
+                            </ul>
+                        </div>
+
+                        <h4 class="fw-semibold mt-5 mb-3">Core Applications</h4>
+
+                        <ul class="core-apps">
+                            <li><strong>Animal Feed</strong> – Added as a supplement to support bone development and enzyme functions.</li>
+                            <li><strong>Ceramics & Glass</strong> – Acts as a colorant and additive for improved quality.</li>
+                            <li><strong>Chemical Industry</strong> – Used in producing manganese dioxide, manganese carbonate, and other salts.</li>
+                            <li><strong>Pharmaceuticals</strong> – Source of manganese in medicinal formulations and dietary supplements.</li>
+                            <li><strong>Textile Industry</strong> – Functions as a mordant in dyeing and printing fabrics.</li>
+                        </ul>
+
+                        <h4 class="fw-semibold mt-5 mb-3">Extended Applications</h4>
+
+                        <ul class="extended-apps">
+                            <li><strong>Battery Industry</strong> – Applied in the manufacture of dry-cell batteries.</li>
+                            <li><strong>Electronics</strong> – Plays a role in specialty manganese-based materials.</li>
+                            <li><strong>Pigments & Paints</strong> – Provides manganese compounds for coloring and stability.</li>
+                            <li><strong>Water Treatment</strong> – Used in certain purification and conditioning processes.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+                <!-- SIDEBAR -->
+                <div class="col-lg-4">
+                    <div class="content-box">
+
+                        <h5 class="fw-semibold mb-3">Quick Contact</h5>
+
+                        <form action="quick-contact.php" method="post">
+                            <input type="text" name="name" class="form-control mb-3" placeholder="Name" required>
+                            <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+                            <input type="text" name="phone" class="form-control mb-3" placeholder="Phone">
+                            <textarea name="message" class="form-control mb-3" rows="3"
+                                placeholder="Message"></textarea>
+                            <button class="btn btn-primary w-100">Submit</button>
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-light py-4">
+        <div class="container text-center text-muted small">
+            © 2011 Rajasthan Minerals & Chemicals. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
