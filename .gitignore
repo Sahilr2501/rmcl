@@ -1,0 +1,30 @@
+# Sensitive files
+config.php
+.env
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+error_log
+
+# Temporary files
+*.tmp
+*.temp
+cache/
+tmp/
+
+# XAMPP specific
+xampp/
+
