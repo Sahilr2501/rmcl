@@ -18,7 +18,7 @@
 
     <!-- LOGO -->
     <a class="navbar-brand" href="/rmcl">
-      <img src="img/log.png" height="60" alt="RMCL">
+      <img src="img/logo.png" height="70" alt="RMCL">
     </a>
 
     <!-- TOGGLER -->

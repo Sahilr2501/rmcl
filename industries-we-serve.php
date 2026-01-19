@@ -207,7 +207,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Animal Feed</span>
-            <img src="industries/Agricultural-Fertilizer-Industry_Pesticides-Industry1.jpg">
+            <img src="industries/Animal-Feed_Veterinary-Industry1.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Animal Feed & Veterinary Industry</h5>
               <ul class="mt-3">
@@ -223,7 +223,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Construction</span>
-            <img src="industries/">
+            <img src="industries/Construction-Engineering_Cement-Industry_Foundary-Sand-Casting1.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Construction Engineering/Cement Industry/ Foundary Sand & Sand Casting/Railroad Industry.</h5>
               <ul class="mt-3">
@@ -297,7 +297,7 @@
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Water Treatment</span>
             <img
-              src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg">
+              src="industries/Environmental-Applications_Water-Treatment-Plants.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Environmental Applications/ Water Treatment Plants & Purification/ Effluent Treatment/ Flue gas Treatment</h5>
               <ul class="mt-3">
@@ -317,7 +317,7 @@
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Cosmetics</span>
             <img
-              src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg">
+              src="industries/Cosmetic_Oral-Care_Skin-Care_Hair-Care-Industry.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Cosmetic/ Oral Care & Skin Care, Hair Care Industry/ Polishes/ Detergents</h5>
               <ul class="mt-3">
@@ -339,7 +339,7 @@
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Food & Hygiene</span>
             <img
-              src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg">
+              src="industries/Food_Beverages_Food-Preservatives_Hygiene_Cleaning-Industry.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Food & Beverages/ Food Preservatives & Soya Milk Products/ Hygiene & Cleaning Industry/ Tobacco Industry</h5>
               <ul class="mt-3">
@@ -359,7 +359,7 @@
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Healthcare</span>
             <img
-              src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg">
+              src="industries/Medical_Health_Dietary-Supplement_Life-Support-Systems.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Medical/ Health & Dietary Supplement/ Life Support Systems</h5>
               <ul class="mt-3">
@@ -376,7 +376,7 @@
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Electronics</span>
             <img
-              src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg">
+              src="industries/Electricals_Electronics_Semi-Conductors_Laser-Industry.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Electricals & Electronics/ Semi-Conductors & Laser Industry</h5>
               <ul class="mt-3">
@@ -395,7 +395,7 @@
           <div class="card industry-card position-relative">
             <span class="badge badge-industry text-white">Metallurgy</span>
             <img
-              src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg">
+              src="industries/Iron_Steel_Metallurgical_Auto-Mobiles-Industry_Sheet_Bulk-Moulding_Refractory-Industry.jpg">
             <div class="card-body">
               <h5 class="fw-semibold">Iron, Steel, Metallurgical & Auto Mobiles Industry/ Sheet & Bulk Moulding/ Refractory Industryy</h5>
               <ul class="mt-3">
