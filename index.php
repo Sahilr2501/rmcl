@@ -783,7 +783,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="product-gallery-item card-hover">
                         <div class="product-image-wrapper">
-                            <img src="img/magnesium-chloride-small.png" alt="Magnesium Chloride" class="product-image">
+                            <img src="img/Magnesium-oxide_carbonates.png" alt="Magnesium Chloride" class="product-image">
                         </div>
                         <h3 class="product-title">Magnesium Chloride</h3>
                         <p class="product-description">Formulated for reliable performance in de-icing, dust control, and diverse industrial applications.</p>

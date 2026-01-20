@@ -81,6 +81,7 @@
         <a href="industries-we-serve.php" class="footer-link">Industries</a>
         <a href="contact.php" class="footer-link">Contact</a>
         <a href="join-rmcl.php" class="footer-link">Career</a>
+        <a href="img/ISO Certificate0.pdf" class="footer-link" target="_blank">ISO Certificate</a>
       </div>
 
       <!-- PRODUCTS -->

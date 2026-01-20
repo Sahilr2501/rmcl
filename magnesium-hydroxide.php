@@ -39,16 +39,53 @@
             line-height: 1.5;
         }
 
-        /* HERO IMAGE – FULL IMAGE, NO CROP, NO TEXT */
-        .hero-image {
+        /* HERO IMAGE - PC IMAGE ON ALL DEVICES, FIT WITHOUT CUTTING */
+        .hero-image-container {
             width: 100%;
             background: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-image img {
+        .hero-image-container img {
             width: 100%;
             height: auto;
+            max-height: 500px; /* Adjust this value as needed */
+            object-fit: contain; /* This ensures the entire image fits without cropping */
             display: block;
+        }
+
+        /* Responsive height adjustments */
+        @media (max-width: 1200px) {
+            .hero-image-container img {
+                max-height: 450px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-image-container img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-container img {
+                max-height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-image-container img {
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-image-container img {
+                max-height: 250px;
+            }
         }
 
         /* Hover dropdown (desktop only) */
@@ -70,15 +107,12 @@
     <!-- NAVBAR -->
     <?php include 'nav.php'; ?>
 
-    <!-- HERO IMAGE -->
-    <section class="hero-image">
-        <picture>
-            <!-- Mobile Image -->
-            <source media="(max-width: 767px)" srcset="img/magnesium-hydroxide-small.png">
-
-            <!-- Desktop Image -->
-            <img src="img/magnesium-hydroxide-banner.jpg" alt="Magnesium Hydroxide Powder">
-        </picture>
+    <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
+    <section class="hero-image-container">
+        <!-- Use PC image for all devices -->
+        <img src="img/magnesium-hydroxide-banner.jpg" 
+             alt="Magnesium Hydroxide Powder"
+             loading="eager">
     </section>
 
     <!-- CONTENT -->
@@ -98,7 +132,7 @@
 
                         <h5 class="fw-semibold mb-3">Description</h5>
                         <p>
-                            Magnesium Hydroxide, often referred to as “milk of magnesia” in its suspension form, is a white, odorless, and slightly soluble inorganic compound. Known for its alkalinity, flame-retardant properties, and safety profile, it is widely used in pharmaceuticals, environmental treatment, flame-retardant applications, and as an industrial raw material. With its dual role as both a neutralizing and stabilizing agent, Magnesium Hydroxide is an indispensable compound across industries.
+                            Magnesium Hydroxide, often referred to as "milk of magnesia" in its suspension form, is a white, odorless, and slightly soluble inorganic compound. Known for its alkalinity, flame-retardant properties, and safety profile, it is widely used in pharmaceuticals, environmental treatment, flame-retardant applications, and as an industrial raw material. With its dual role as both a neutralizing and stabilizing agent, Magnesium Hydroxide is an indispensable compound across industries.
                         </p>
 
                         <div class="highlight-box">

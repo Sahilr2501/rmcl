@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calcium Carbonate / Calcite (CaCO₃) | Rajasthan Minerals & Chemicals</title>
+    <title>Calcium Chloride (CaCl₂) | Rajasthan Minerals & Chemicals</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -39,16 +39,53 @@
             line-height: 1.5;
         }
 
-        /* HERO IMAGE – FULL IMAGE, NO CROP, NO TEXT */
-        .hero-image {
+        /* HERO IMAGE - PC IMAGE ON ALL DEVICES, FIT WITHOUT CUTTING */
+        .hero-image-container {
             width: 100%;
             background: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .hero-image img {
+        .hero-image-container img {
             width: 100%;
             height: auto;
+            max-height: 500px; /* Adjust this value as needed */
+            object-fit: contain; /* This ensures the entire image fits without cropping */
             display: block;
+        }
+
+        /* Responsive height adjustments */
+        @media (max-width: 1200px) {
+            .hero-image-container img {
+                max-height: 450px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-image-container img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-container img {
+                max-height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-image-container img {
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-image-container img {
+                max-height: 250px;
+            }
         }
 
         /* Hover dropdown (desktop only) */
@@ -70,14 +107,12 @@
     <!-- NAVBAR -->
     <?php include 'nav.php'; ?>
 
-    <!-- HERO IMAGE -->
-    <section class="hero-image">
-        <picture>
-            <!-- Mobile Image -->
-            <source media="(max-width: 767px)" srcset="img/calcium-carbonates_calcite-small.png">
-            <!-- Desktop Image -->
-            <img src="img/Calcium-Carbonates_Calcite_Limestone-banner.jpg" alt="Calcium Carbonate Calcite">
-        </picture>
+    <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
+    <section class="hero-image-container">
+        <!-- Use PC image for all devices -->
+        <img src="img/Calcium-Carbonates_Calcite_Limestone-banner.jpg" 
+             alt="Calcium Chloride Flakes and Powder"
+             loading="eager">
     </section>
 
     <!-- CONTENT -->
@@ -90,61 +125,41 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Calcium Carbonate / Calcite – CaCO<sub>3</sub>
+                            Calcium Chloride – CaCl<sub>2</sub>
                         </h1>
 
-                        <p><strong>Formula : CaCO<sub>3</sub></strong></p>
+                        <p><strong>Formula : CaCl<sub>2</sub></strong></p>
 
                         <h5 class="fw-semibold mb-3">Description</h5>
                         <p>
-                            In its natural state, Calcium Carbonate occurs as chalk, Limestone and Marble. Calcium Carbonate commonly known as Calcite.
-                        </p>
-                        <p>
-                            RMCL's Calcium Carbonate is mined out with an average purity of 98.5 %. However we customise varied grades of Calcium Carbonates with purity 90% to 98.5% with varied Mesh and Particle size as per client company's requirement.
+                            Calcium Chloride is a white, crystalline, highly soluble salt widely used for its moisture-absorbing, de-icing, and stabilizing properties. Known for its hygroscopic nature, versatility, and cost-effectiveness, it plays a vital role in industries ranging from construction and food processing to oil & gas, chemicals, and agriculture. With its ability to control moisture, improve stability, and regulate temperature, Calcium Chloride is considered an essential industrial and commercial chemical.
                         </p>
 
                         <div class="highlight-box">
                             <h4 class="fw-semibold mb-3">Key Highlights</h4>
                             <ul class="mb-0">
-                                <li><strong>Chemical Stability</strong> – Safe, natural, and stable under various conditions.</li>
-                                <li><strong>Excellent Filler Properties</strong> – Used as a cost-effective extender in multiple applications.</li>
-                                <li><strong>High Purity & Whiteness</strong> – Ensures consistent performance across industries.</li>
-                                <li><strong>Multiple Forms Available</strong> – Supplied in natural lumps, powder, and micronized grades.</li>
+                                <li><strong>Effective De-Icing Agent</strong> – Works faster than sodium chloride in snow/ice control.</li>
+                                <li><strong>High Solubility & Hygroscopicity</strong> – Quickly absorbs moisture and dissolves in water.</li>
+                                <li><strong>Multi-Functional Uses</strong> – Serves as a drying agent, stabilizer, and accelerator.</li>
+                                <li><strong>Multiple Forms Available</strong> – Supplied in flakes, pellets, powder, and liquid grades.</li>
                             </ul>
                         </div>
 
                         <h4 class="fw-semibold mt-5 mb-3">Core Applications</h4>
 
                         <ul class="core-apps">
-                            <li><strong>Chemical Industry</strong> – Used in producing calcium-based chemicals and pH control.</li>
-                            <li><strong>Construction & Cement</strong> – Primary raw material for cement, lime, and concrete.</li>
-                            <li><strong>Oral Care</strong> – Used in the production of toothpaste.</li>
-                            <li><strong>Pharmaceuticals</strong> – Used as a calcium supplement and antacid.</li>
-                            <li><strong>Polymer Industry</strong> – Polypropylene compounds are often filled with calcium carbonate to increase rigidity, a requirement that becomes important at high use temperatures.</li>
-                            <li><strong>Printing</strong> – Used as a coating for glossy papers.</li>
-                            <li><strong>Sheet and Bulk Moulding</strong> – Used as a filler in thermosetting resins.</li>
-                            <li><strong>Steel & Metallurgy</strong> – Acts as a flux to remove impurities during production.</li>
-                            <li><strong>Ceramic Industry</strong> – Is a common ingredient for many glazes in its white powdered form.</li>
-                            <li><strong>Environmental Applications</strong> – It is added to neutralize the effects of acid rain in river ecosystems and is used to neutralize acidic conditions in both soil and water.</li>
+                            <li><strong>Agriculture</strong> – Supplies essential nutrients like calcium and chloride to crops, improves soil quality, and helps prevent plant disorders.</li>
+                            <li><strong>De-Icing & Dust Control</strong> – Widely used for melting ice and snow on roads, sidewalks, and highways due to its high solubility and hygroscopic nature. Also effective in controlling dust on unpaved roads.</li>
+                            <li><strong>Food & Beverage Industry</strong> – Used as a firming agent in canned vegetables, cheese production, and brewing processes to enhance stability and improve texture.</li>
+                            <li><strong>Pharmaceuticals & Healthcare</strong> – Used in medicines, laboratory applications, and as an electrolyte replenisher in certain medical treatments.</li>
                         </ul>
 
                         <h4 class="fw-semibold mt-5 mb-3">Extended Applications</h4>
 
                         <ul class="extended-apps">
-                            <li><strong>Soya Milk</strong> – Used in some soy milk products as a source of dietary calcium.</li>
-                            <li><strong>Adhesives</strong> – Used in wide range of trade and do it yourself adhesives, sealants, and decorating fillers.</li>
-                            <li><strong>Agriculture</strong> – Improves soil quality, reduces acidity, and supports crop growth.</li>
-                            <li><strong>Cables Industry</strong> – Used to improve mechanical properties.</li>
-                            <li><strong>Cleaning</strong> – Is an abrasive, for ceramics, enamel, bronze, iron and steel. A paste made from calcium carbonate and deionised water can be used to clean tarnish on silver.</li>
-                            <li><strong>Food Preservatives</strong> – Used as a firming agent in many canned or bottled vegetable products.</li>
-                            <li><strong>Glass</strong> – It is also mixed with putty in setting stained glass windows, and as a resist to prevent glass from sticking to kiln shelves when firing glazes and paints at high temperature.</li>
-                            <li><strong>Health and Dietary Supplement</strong> – Used medicinally as an inexpensive dietary calcium supplement or gastric antacid.</li>
-                            <li><strong>Hygiene</strong> – An essential ingredient in the micro porous film used in babies' diapers and some building films.</li>
-                            <li><strong>Iron and Ores</strong> – Used in the purification of iron from iron ore in a blast furnace.</li>
-                            <li><strong>Oil Industry</strong> – Is added to drilling fluids as a formation-bridging and filter cake-sealing agent; it is also a weighting material which increases the density of drilling fluids to control the down hole pressure.</li>
-                            <li><strong>Paints & Coatings</strong> – Used as an extender in matte emulsion paint, also as an additive itself in white paints.</li>
-                            <li><strong>Plastics & Rubber</strong> – Used as a filler to increase strength and reduce costs.</li>
-                            <li><strong>Water Treatment</strong> – Used in neutralizing acidic water and wastewater treatment.</li>
+                            <li><strong>Construction Industry</strong> – Used as a concrete accelerator and dust control agent.</li>
+                            <li><strong>Oil & Gas Industry</strong> – Applied in drilling fluids, completion fluids, and well operations.</li>
+                            <li><strong>Water Treatment</strong> – Helps in hardness adjustment and purification processes.</li>
                         </ul>
 
                     </div>

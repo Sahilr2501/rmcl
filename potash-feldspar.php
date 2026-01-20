@@ -29,10 +29,53 @@
             margin-bottom: 10px;
         }
 
-        .hero-image img {
+        /* HERO IMAGE - PC IMAGE ON ALL DEVICES, FIT WITHOUT CUTTING */
+        .hero-image-container {
+            width: 100%;
+            background: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image-container img {
             width: 100%;
             height: auto;
+            max-height: 500px; /* Adjust this value as needed */
+            object-fit: contain; /* This ensures the entire image fits without cropping */
             display: block;
+        }
+
+        /* Responsive height adjustments */
+        @media (max-width: 1200px) {
+            .hero-image-container img {
+                max-height: 450px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-image-container img {
+                max-height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-image-container img {
+                max-height: 350px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-image-container img {
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero-image-container img {
+                max-height: 250px;
+            }
         }
 
         /* Hover dropdown (desktop only) */
@@ -54,15 +97,12 @@
     <!-- NAVBAR -->
     <?php include 'nav.php'; ?>
 
-    <!-- HERO IMAGE -->
-    <section class="hero-image">
-        <picture>
-            <!-- Mobile Image -->
-            <source media="(max-width: 767px)" srcset="img/Potash-Feldspar_Soda-Feldspar-small.png">
-
-            <!-- Desktop Image -->
-            <img src="img/Potash-Feldspar_Soda-Feldspar.jpg" alt="Potash & Soda Feldspar">
-        </picture>
+    <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
+    <section class="hero-image-container">
+        <!-- Use PC image for all devices -->
+        <img src="img/Potash-Feldspar_Soda-Feldspar.jpg" 
+             alt="Potash & Soda Feldspar"
+             loading="eager">
     </section>
 
     <!-- CONTENT -->
