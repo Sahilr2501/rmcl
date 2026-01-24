@@ -110,7 +110,7 @@
     <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
     <section class="hero-image-container">
         <!-- Use PC image for all devices -->
-        <img src="img/magnesium-chloride-banner.jpg" 
+        <img src="img/magnesium-chloride-banner.png" 
              alt="Magnesium Chloride Flakes and Powder"
              loading="eager">
     </section>

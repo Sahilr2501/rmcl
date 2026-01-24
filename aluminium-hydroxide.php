@@ -110,7 +110,7 @@
     <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
     <section class="hero-image-container">
         <!-- Use PC image for all devices -->
-        <img src="img/aluminium-hydroxide-banner.jpg" 
+        <img src="img/aluminium-hydroxide-banner.png" 
              alt="Aluminium Hydroxide Powder"
              loading="eager">
     </section>
@@ -125,7 +125,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Aluminium Hydroxide – Al(OH)<sub>3</sub>
+                            Aluminium Hydroxide
                         </h1>
 
                         <p><strong>Formula : Al(OH)<sub>3</sub></strong></p>

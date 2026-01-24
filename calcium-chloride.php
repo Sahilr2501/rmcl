@@ -110,7 +110,7 @@
     <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
     <section class="hero-image-container">
         <!-- Use PC image for all devices -->
-        <img src="img/calcium-chloride-banner.jpg" 
+        <img src="img/calcium-chloride-banner.png" 
              alt="Calcium Chloride Flakes and Powder"
              loading="eager">
     </section>
@@ -125,7 +125,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Calcium Chloride – CaCl<sub>2</sub>
+                            Calcium Chloride
                         </h1>
 
                         <p><strong>Formula : CaCl<sub>2</sub></strong></p>

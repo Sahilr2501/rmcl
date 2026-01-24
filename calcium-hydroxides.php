@@ -128,7 +128,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Calcium Hydroxide / Hydrated Lime / Slaked Lime – Ca(OH)<sub>2</sub>
+                            Calcium Hydroxide / Hydrated Lime / Slaked Lime
                         </h1>
 
                         <p><strong>Formula : Ca(OH)<sub>2</sub></strong></p>

@@ -21,19 +21,21 @@ function clean($data) {
     return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
+// Get form data with new field names
+$company_name    = clean($_POST['company_name'] ?? '');
+$designation     = clean($_POST['designation'] ?? '');
 $name            = clean($_POST['name'] ?? '');
-$email           = clean($_POST['email'] ?? '');
 $phone           = clean($_POST['phone'] ?? '');
-$company         = clean($_POST['company'] ?? '');
+$email           = clean($_POST['email'] ?? '');
 $city_state      = clean($_POST['city_state'] ?? '');
 $product_name    = clean($_POST['product_name'] ?? '');
-$request_type    = clean($_POST['request_type'] ?? '');
-$request_company = clean($_POST['request_company'] ?? '');
-$notes           = clean($_POST['notes'] ?? '');
+$document_type   = clean($_POST['document_type'] ?? '');
+$request_for     = clean($_POST['request_for'] ?? '');
+$additional_info = clean($_POST['additional_info'] ?? '');
 
-// Required fields check
-if (empty($name) || empty($email) || empty($product_name) || empty($request_type)) {
-    header('Location: sds-tds.php?error=1');
+// Required fields check - updated with new required fields
+if (empty($name) || empty($phone) || empty($email) || empty($product_name) || empty($document_type) || empty($request_for)) {
+    header('Location: sds&tds.php?error=1');
     exit;
 }
 
@@ -62,7 +64,7 @@ try {
     $mail->isHTML(true);
     $mail->Subject = "New SDS/TDS Request - {$product_name} ({$requestId})";
 
-    // EMAIL BODY (ADMIN)
+    // EMAIL BODY (ADMIN) - Updated with new fields
     $mail->Body = <<<HTML
 <div style="font-family: Arial, sans-serif; color:#333; line-height:1.6;">
   <h2 style="color:#0d6efd;">New SDS / TDS Request</h2>
@@ -70,19 +72,20 @@ try {
   <table cellpadding="10" cellspacing="0" width="100%" style="border-collapse:collapse;">
     <tr><td><strong>Request ID</strong></td><td>{$requestId}</td></tr>
     <tr><td><strong>Submitted At</strong></td><td>{$submittedAt}</td></tr>
+    <tr><td><strong>Company Name</strong></td><td>{$company_name}</td></tr>
+    <tr><td><strong>Designation/Department</strong></td><td>{$designation}</td></tr>
     <tr><td><strong>Name</strong></td><td>{$name}</td></tr>
-    <tr><td><strong>Email</strong></td><td>{$email}</td></tr>
     <tr><td><strong>Phone</strong></td><td>{$phone}</td></tr>
-    <tr><td><strong>Company</strong></td><td>{$company}</td></tr>
+    <tr><td><strong>Email</strong></td><td>{$email}</td></tr>
     <tr><td><strong>City / State</strong></td><td>{$city_state}</td></tr>
-    <tr><td><strong>Requesting For</strong></td><td>{$request_company}</td></tr>
     <tr><td><strong>Product Name</strong></td><td>{$product_name}</td></tr>
-    <tr><td><strong>Document Type</strong></td><td>{$request_type}</td></tr>
+    <tr><td><strong>Document Type</strong></td><td>{$document_type}</td></tr>
+    <tr><td><strong>Requesting For</strong></td><td>{$request_for}</td></tr>
   </table>
 
-  <h3 style="margin-top:25px;">Additional Notes</h3>
+  <h3 style="margin-top:25px;">Additional Information</h3>
   <div style="background:#f8f9fa;padding:15px;border-radius:6px;">
-    {$notes}
+    {$additional_info}
   </div>
 
   <p style="margin-top:30px;font-size:12px;color:#777;">
@@ -107,7 +110,7 @@ HTML;
     $auto->addAddress($email, $name);
     $auto->isHTML(true);
 
-    $auto->Subject = "SDS/TDS Request Received {$product_name}";
+    $auto->Subject = "SDS/TDS Request Received - {$product_name}";
 
     $auto->Body = <<<HTML
 <div style="font-family: Arial, sans-serif; color:#333; line-height:1.6;">
@@ -116,7 +119,7 @@ HTML;
   <p>Dear {$name},</p>
 
   <p>
-    We have received your request for <strong>{$request_type}</strong>
+    We have received your request for <strong>{$document_type}</strong>
     related to <strong>{$product_name}</strong>.
   </p>
 
@@ -145,12 +148,12 @@ HTML;
 
     $auto->send();
 
-    // SUCCESS
+    // SUCCESS - Fixed redirect URL
     header('Location: sds&tds.php?success=1');
     exit;
 
 } catch (Exception $e) {
-    // ERROR
-    header('Location: sds&tds.php?error=1');
+    // ERROR - Fixed redirect URL
+    header('Location: sds&tds.php?error=1&message=' . urlencode($e->getMessage()));
     exit;
 }

@@ -110,7 +110,7 @@
     <!-- HERO IMAGE - PC IMAGE ON ALL DEVICES -->
     <section class="hero-image-container">
         <!-- Use PC image for all devices -->
-        <img src="img/red-ocher-banner.jpg" 
+        <img src="img/Red-Ocher_Natural-Red-Oxide.jpg" 
              alt="Red Ocher Natural Red Oxide"
              loading="eager">
     </section>

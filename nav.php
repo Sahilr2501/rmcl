@@ -11,6 +11,40 @@
 .dropdown-menu {
   transition: all 0.25s ease;
 }
+
+/* ISO Certificate Button Styling */
+.iso-btn {
+  background: linear-gradient(135deg, #0047AB 0%, #002D62 100%);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+}
+
+.iso-btn:hover {
+  background: linear-gradient(135deg, #002D62 0%, #0047AB 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .iso-btn {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-item.ms-lg-2 {
+    margin-left: 0 !important;
+  }
+}
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
@@ -47,14 +81,14 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="calcium-carbonates.php">Calcium Carbonate</a></li>
-            <li><a class="dropdown-item" href="calcium-hydroxides.php">Calcium Hydroxides</a></li>
-            <li><a class="dropdown-item" href="china-clay.php">China Clay</a></li>
-            <li><a class="dropdown-item" href="dolomite.php">Dolomite</a></li>
-            <li><a class="dropdown-item" href="#">Calcium Chloride</a></li>
-            <li><a class="dropdown-item" href="magnesium-oxide.php">Magnesium Oxide</a></li>
-            <li><a class="dropdown-item" href="soapstone-(talc).php">Soap Stone</a></li>
-            <li><a class="dropdown-item" href="#">Di Calcium Phosphate</a></li>
+            <li><a class="dropdown-item" href="calcium-hydroxides.php">Calcium Hydroxide/ Hydrated Lime</a></li>
+            <li><a class="dropdown-item" href="calcium-carbonates.php">Calcium Carbonate/ Calcite</a></li>
+            <li><a class="dropdown-item" href="china-clay.php">China Clay/ Kaolin</a></li>
+            <li><a class="dropdown-item" href="dolomite.php">Dolomite /Calcined Dolomite</a></li>
+            <li><a class="dropdown-item" href="potash-feldspar.php">Feldspar/ Quartz</a></li>
+            <li><a class="dropdown-item" href="magnesium-oxide.php">Magnesium Oxide / Carbonates</a></li>
+            <li><a class="dropdown-item" href="natural-red-oxide.php">Red Ochre/ Natural Red Oxide</a></li>
+            <li><a class="dropdown-item" href="soapstone-(talc).php">Soap stone/ Talc</a></li>
           </ul>
         </li>
 
@@ -65,12 +99,11 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="calcium-hydroxides.php">Calcium Hydrocloride</a></li>
-            <li><a class="dropdown-item" href="#">Calcium Chloride</a></li>
-            <li><a class="dropdown-item" href="#">Di Calcium / Tricalcium Phosphate</a></li>
-            <li><a class="dropdown-item" href="#">Magnesium Chloride</a></li>
-            <li><a class="dropdown-item" href="#">Magnesium Sulphate</a></li>
-            <li><a class="dropdown-item" href="aluminium-hydroxide.php">Aluminum Hydroxide</a></li>
+            <li><a class="dropdown-item" href="calcium-chloride.php">Calcium Chloride</a></li>
+            <li><a class="dropdown-item" href="calcium-hypochlorite.php">Calcium Hypochlorite</a></li>
+            <li><a class="dropdown-item" href="#">Di Calcium/ Tri Calcium Phosphate</a></li>
+            <li><a class="dropdown-item" href="magnesium-chloride.php">Magnesium Chloride</a></li>
+            <li><a class="dropdown-item" href="magnesium-sulphate.php">Magnesium Sulphate</a></li>
           </ul>
         </li>
 
@@ -81,8 +114,7 @@
           </a>
 
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Calcium Hydrocloride</a></li>
-            <li><a class="dropdown-item" href="aluminum-hydroxide.php">Aluminum Hydroxide</a></li>
+            <li><a class="dropdown-item" href="aluminium-hydroxide.php">Alluminium Hydroxide</a></li>
             <li><a class="dropdown-item" href="mica.php">Mica</a></li>
             <li><a class="dropdown-item" href="bentonite.php">Bentonite</a></li>
           </ul>
@@ -93,7 +125,17 @@
           <a class="nav-link" href="sds&tds.php">Request TDS</a>
         </li>
 
+        <!-- ISO CERTIFICATE BUTTON - Opens PDF directly -->
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+          <a href="img/ISO Certificate.pdf" class="btn iso-btn" target="_blank">
+            <i class="fas fa-award me-2"></i>ISO Certificate
+          </a>
+        </li>
+
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Add Font Awesome if not already included -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

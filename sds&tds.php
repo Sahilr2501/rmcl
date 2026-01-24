@@ -280,7 +280,7 @@
 <body>
   <?php include 'nav.php'; ?>
 
-  <!-- SDS & TDS HERO (UNCHANGED) -->
+  <!-- SDS & TDS HERO -->
   <section class="sds-hero">
     <div class="container">
       <div class="sds-content">
@@ -303,7 +303,7 @@
     </div>
   </section>
 
-  <!-- REDESIGNED FORM SECTION -->
+  <!-- FORM SECTION -->
   <div class="form-container">
     <div class="form-section-card">
       <!-- Form Header -->
@@ -316,18 +316,42 @@
       <div class="form-body">
         <form action="sds-tds-request.php" method="post">
           
-          <!-- Personal Information Section -->
+          <!-- COMPANY INFO SECTION -->
           <div class="form-section-title">
-            <i class="bi bi-person-badge"></i>
-            Personal Information
+            <i class="bi bi-building"></i>
+            Company Info
           </div>
           
           <div class="row">
             <div class="col-md-6">
               <div class="form-group-enhanced">
-                <label class="form-label required">Full Name</label>
+                <label class="form-label">Company name</label>
+                <input type="text" name="company_name" class="form-control form-control-custom" 
+                       placeholder="Enter your company name">
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group-enhanced">
+                <label class="form-label">Designation/Department</label>
+                <input type="text" name="designation" class="form-control form-control-custom" 
+                       placeholder="Enter your designation/department">
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group-enhanced">
+                <label class="form-label required">Name</label>
                 <input type="text" name="name" class="form-control form-control-custom" 
                        placeholder="Enter your full name" required>
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              <div class="form-group-enhanced">
+                <label class="form-label required">Phone Number</label>
+                <input type="tel" name="phone" class="form-control form-control-custom" 
+                       placeholder="Enter your phone number" required>
               </div>
             </div>
             
@@ -341,22 +365,6 @@
             
             <div class="col-md-6">
               <div class="form-group-enhanced">
-                <label class="form-label">Phone Number</label>
-                <input type="text" name="phone" class="form-control form-control-custom" 
-                       placeholder="+91 XXXX XXX XXX">
-              </div>
-            </div>
-            
-            <div class="col-md-6">
-              <div class="form-group-enhanced">
-                <label class="form-label">Company Name</label>
-                <input type="text" name="company" class="form-control form-control-custom" 
-                       placeholder="Your company/organization name">
-              </div>
-            </div>
-            
-            <div class="col-12">
-              <div class="form-group-enhanced">
                 <label class="form-label">City & State</label>
                 <input type="text" name="city_state" class="form-control form-control-custom" 
                        placeholder="Enter your city and state">
@@ -364,10 +372,10 @@
             </div>
           </div>
           
-          <!-- Product Information Section -->
+          <!-- PRODUCT & DOCUMENTS DETAILS SECTION -->
           <div class="form-section-title">
-            <i class="bi bi-box-seam"></i>
-            Product & Document Details
+            <i class="bi bi-file-earmark-text"></i>
+            Product & Documents Details
           </div>
           
           <div class="row">
@@ -376,46 +384,40 @@
                 <label class="form-label required">Product Name</label>
                 <input type="text" name="product_name" class="form-control form-control-custom" 
                        placeholder="Enter the product name" required>
-                <small class="form-text text-muted">Please specify the exact product name</small>
               </div>
             </div>
             
             <div class="col-md-6">
               <div class="form-group-enhanced">
                 <label class="form-label required">Document Type</label>
-                <select name="request_type" class="form-select form-select-custom" required>
+                <select name="document_type" class="form-select form-select-custom" required>
                   <option value="">Select document type</option>
-                  <option value="SDS">Safety Data Sheet (SDS)</option>
                   <option value="TDS">Technical Data Sheet (TDS)</option>
-                  <option value="Both">Both SDS & TDS</option>
                 </select>
-                <small class="form-text text-muted">Select the document(s) you need</small>
               </div>
             </div>
             
             <div class="col-12">
               <div class="form-group-enhanced">
-                <label class="form-label">Requesting For</label>
-                <input type="text" name="request_company" class="form-control form-control-custom" 
-                       placeholder="If requesting on behalf of another company/organization">
-                <small class="form-text text-muted">Optional - Leave blank if requesting for yourself</small>
+                <label class="form-label required">Requesting For</label>
+                <input type="text" name="request_for" class="form-control form-control-custom" 
+                       placeholder="If requesting on behalf of another company/organization" required>
               </div>
             </div>
           </div>
           
-          <!-- Additional Information Section -->
+          <!-- ADDITIONAL INFORMATION SECTION -->
           <div class="form-section-title">
-            <i class="bi bi-chat-left-text"></i>
+            <i class="bi bi-info-circle"></i>
             Additional Information
           </div>
           
           <div class="row">
             <div class="col-12">
               <div class="form-group-enhanced">
-                <label class="form-label">Additional Notes or Requirements</label>
-                <textarea name="notes" rows="4" class="form-control form-control-custom textarea-custom" 
-                          placeholder="Please include any specific requirements, questions, or additional information that might help us process your request..."></textarea>
-                <small class="form-text text-muted">Optional - Provide any details to help us serve you better</small>
+                <label class="form-label">Additional Notes</label>
+                <textarea name="additional_info" rows="4" class="form-control form-control-custom textarea-custom" 
+                          placeholder="Enter any additional information or special requests..."></textarea>
               </div>
             </div>
           </div>
@@ -445,5 +447,42 @@
   <?php include 'footer.php' ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Form Validation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      
+      // Add required attribute to all fields marked with *
+      const requiredFields = form.querySelectorAll('.required');
+      
+      form.addEventListener('submit', function(event) {
+        let isValid = true;
+        const inputs = form.querySelectorAll('input[required], select[required]');
+        
+        inputs.forEach(input => {
+          if (!input.value.trim()) {
+            isValid = false;
+            input.style.borderColor = 'red';
+          } else {
+            input.style.borderColor = '';
+          }
+        });
+        
+        if (!isValid) {
+          event.preventDefault();
+          alert('Please fill in all required fields marked with *');
+        }
+      });
+      
+      // Reset form styles
+      form.querySelector('button[type="reset"]').addEventListener('click', function() {
+        const inputs = form.querySelectorAll('input, select');
+        inputs.forEach(input => {
+          input.style.borderColor = '';
+        });
+      });
+    });
+  </script>
 </body>
 </html>
