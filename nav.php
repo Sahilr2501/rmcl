@@ -32,6 +32,36 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Logo container styling */
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 70px; /* Match logo height */
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 10px;
+  font-weight: 600;
+  color: #0047AB;
+  margin-top: 2px;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+}
+
+/* Adjust navbar brand to have proper spacing */
+.navbar-brand {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-right: 40px; /* Add more space between logo and menu items */
+}
+
+/* Adjust navbar items alignment */
+.navbar-nav {
+  align-items: center;
+}
+
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .iso-btn {
@@ -44,15 +74,51 @@
   .navbar-nav .nav-item.ms-lg-2 {
     margin-left: 0 !important;
   }
+  
+  .logo-text {
+    font-size: 9px;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+  .logo-container {
+    align-items: center;
+    text-align: center;
+    min-height: auto;
+  }
+  
+  .navbar-brand {
+    margin-right: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+}
+
+/* Ensure proper spacing in navbar */
+.navbar-collapse {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Add padding to nav items for better spacing */
+.navbar-nav .nav-link {
+  padding: 15px 12px !important;
+}
+
+/* Adjust dropdown positioning */
+.dropdown-menu {
+  margin-top: 0 !important;
 }
 </style>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
   <div class="container">
 
-    <!-- LOGO -->
+    <!-- LOGO with ISO text -->
     <a class="navbar-brand" href="/rmcl">
-      <img src="img/logo.png" height="70" alt="RMCL">
+      <div class="logo-container">
+        <img src="img/ISO 90012015 certified company.png" height="77" alt="RMCL">
+      </div>
     </a>
 
     <!-- TOGGLER -->

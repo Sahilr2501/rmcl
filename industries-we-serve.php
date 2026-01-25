@@ -2,370 +2,746 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Our Products | Rajasthan Minerals & Chemicals</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Industries We Serve | Rajasthan Minerals & Chemicals</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Styles -->
     <style>
         :root {
-            --primary: #0d6efd;
-            --primary-dark: #0b5ed7;
-            --secondary: #6c757d;
-            --dark: #212529;
+            --primary: #0a5c7f;
+            --primary-dark: #08435e;
+            --secondary: #d4a017;
+            --accent: #2c8c6d;
             --light: #f8f9fa;
-            --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            --radius: 14px;
+            --dark: #2c3e50;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
         }
 
         body {
-            background-color: var(--light);
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            background-color: #fafafa;
+            line-height: 1.6;
         }
 
-        /* ===== HERO IMAGE ONLY ===== */
-        .hero-image-container {
-            width: 100%;
-            background: #000;
+        /* ====== INDUSTRY CARDS ====== */
+        .industry-section {
+            padding: 80px 0 40px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title .divider {
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin: 0 auto 15px;
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .industry-card {
+            border: none;
+            border-radius: 15px;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            transition: all 0.4s ease;
+            background: white;
+            height: 100%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
         }
 
-        .hero-image-container img {
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .industry-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            z-index: 2;
+            box-shadow: 0 3px 10px rgba(10, 92, 127, 0.3);
+        }
+
+        .industry-image {
+            height: 200px;
             width: 100%;
-            height: auto;
-            max-height: 500px;
-            object-fit: contain;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .industry-card:hover .industry-image {
+            transform: scale(1.05);
+        }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .card-body {
+            padding: 25px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .minerals-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .minerals-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .mineral-icon {
+            color: var(--secondary);
+            margin-right: 10px;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .mineral-link {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            line-height: 1.4;
             display: block;
         }
 
-        /* ===== PRODUCTS GRID ===== */
-        .product-card {
-            background: var(--white);
-            border-radius: var(--radius);
-            overflow: hidden;
+        .mineral-link:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .view-all-minerals {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .view-all-minerals:hover {
+            color: var(--primary-dark);
+        }
+
+        .view-all-minerals i {
+            margin-left: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .view-all-minerals:hover i {
+            transform: translateX(5px);
+        }
+
+        /* ====== INDUSTRY STATS ====== */
+        .stats-section {
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f7fa 100%);
+            padding: 70px 0;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
             height: 100%;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
         }
 
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow);
-            border-color: var(--primary);
+        .stat-card:hover {
+            transform: translateY(-5px);
         }
 
-        .product-card:hover .product-img-wrapper::after {
-            opacity: 1;
-        }
-
-        .product-img-wrapper {
-            height: 180px;
-            background: linear-gradient(135deg, #f0f8ff 0%, #e6f2ff 100%);
+        .stat-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 25px;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-text {
+            color: var(--gray);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* ====== CTA SECTION ====== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            padding: 80px 0;
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .product-img-wrapper::after {
+        .cta-section::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"><path d="M0,0L1000,100L1000,0Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
         }
 
-        .product-img-wrapper img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover .product-img-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .product-content {
-            padding: 24px 20px;
-            text-align: center;
-        }
-
-        .product-title {
-            font-size: 1.1rem;
+        .cta-title {
+            font-size: 2.2rem;
             font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 10px;
-            line-height: 1.3;
-            min-height: 2.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .product-description {
-            font-size: 0.9rem;
-            color: var(--secondary);
             margin-bottom: 20px;
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 4rem;
         }
 
-        .btn-view-details {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
+        .cta-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-btn {
+            background: white;
+            color: var(--primary);
             border: none;
-            border-radius: 30px;
-            padding: 10px 24px;
+            padding: 14px 35px;
+            border-radius: 50px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
-        .btn-view-details:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(13, 110, 253, 0.25);
-            color: white;
+        .cta-btn:hover {
+            background: var(--light-gray);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-view-details i {
-            font-size: 0.9rem;
+        .cta-btn i {
+            margin-left: 10px;
             transition: transform 0.3s ease;
         }
 
-        .btn-view-details:hover i {
-            transform: translateX(3px);
+        .cta-btn:hover i {
+            transform: translateX(5px);
         }
 
-        /* ===== CATEGORY BADGES ===== */
-        .category-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--primary);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            z-index: 2;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-        }
-
-        /* ===== PRODUCT COUNTER ===== */
-        .product-counter {
-            text-align: center;
-            margin: 30px 0 40px;
-            color: var(--secondary);
-            font-size: 1rem;
-        }
-
-        .product-counter .count {
-            color: var(--primary);
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1200px) {
-            .product-img-wrapper {
-                height: 160px;
-            }
-            
-            .hero-image-container img {
-                max-height: 450px;
-            }
-        }
-
+        /* ====== RESPONSIVE DESIGN ====== */
         @media (max-width: 992px) {
-            .product-img-wrapper {
-                height: 150px;
+            .section-title h2 {
+                font-size: 1.8rem;
             }
             
-            .hero-image-container img {
-                max-height: 400px;
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .industry-card {
+                margin-bottom: 25px;
             }
         }
 
         @media (max-width: 768px) {
-            .product-img-wrapper {
-                height: 140px;
+            .industry-section {
+                padding: 60px 0 30px 0;
             }
             
-            .hero-image-container img {
-                max-height: 350px;
+            .cta-section {
+                text-align: center;
+                padding: 60px 0;
             }
             
-            .product-title {
-                font-size: 1rem;
+            .stat-number {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 576px) {
-            .product-img-wrapper {
-                height: 130px;
+            .industry-image {
+                height: 180px;
+            }
+            
+            .card-body {
                 padding: 20px;
             }
             
-            .hero-image-container img {
-                max-height: 300px;
+            .card-title {
+                font-size: 1.2rem;
             }
             
-            .product-content {
-                padding: 20px 15px;
+            .cta-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+                width: 100%;
+                justify-content: center;
             }
         }
 
-        @media (max-width: 400px) {
-            .hero-image-container img {
-                max-height: 250px;
-            }
-        }
-
-        /* ===== ANIMATION ===== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .product-card {
-            animation: fadeInUp 0.5s ease forwards;
-            opacity: 0;
-        }
-
-        .product-card:nth-child(1) { animation-delay: 0.1s; }
-        .product-card:nth-child(2) { animation-delay: 0.2s; }
-        .product-card:nth-child(3) { animation-delay: 0.3s; }
-        .product-card:nth-child(4) { animation-delay: 0.4s; }
-        .product-card:nth-child(5) { animation-delay: 0.5s; }
-        .product-card:nth-child(6) { animation-delay: 0.6s; }
-        .product-card:nth-child(7) { animation-delay: 0.7s; }
-        .product-card:nth-child(8) { animation-delay: 0.8s; }
-        .product-card:nth-child(9) { animation-delay: 0.9s; }
-        .product-card:nth-child(10) { animation-delay: 1.0s; }
-        .product-card:nth-child(11) { animation-delay: 1.1s; }
-        .product-card:nth-child(12) { animation-delay: 1.2s; }
-        .product-card:nth-child(13) { animation-delay: 1.3s; }
-        .product-card:nth-child(14) { animation-delay: 1.4s; }
+        /* Remove filter-related styles since we removed the filter section */
     </style>
 </head>
 
 <body>
 
-<?php include 'nav.php'; ?>
+    <!-- NAVBAR -->
+    <?php include 'nav.php'; ?>
 
-<!-- HERO IMAGE ONLY -->
-<section class="hero-image-container">
-    <img src="images/banner4.jpg" 
-         alt="Our Premium Mineral Products"
-         loading="eager">
-</section>
+    <!-- INDUSTRIES GRID -->
+    <section class="industry-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industry-Specific Mineral Solutions</h2>
+                <div class="divider"></div>
+                <p>RMCL provides tailored mineral products for each industry's unique requirements, ensuring optimal performance and efficiency.</p>
+            </div>
 
-<!-- PRODUCTS GRID -->
-<section id="products">
-    <div class="container">
-        
-        <div class="product-counter">
-            <span class="count">14</span> Premium Products Available
-        </div>
-
-        <div class="row g-4">
-            <?php
-            $products = [
-                ['name'=>'Barytes', 'slug'=>'barytes', 'desc'=>'High-density mineral used in drilling muds, paints, rubber, and paper industries for superior performance.', 'img'=>'img/barytes-small.png', 'category'=>'Industrial'],
-                ['name'=>'Bentonite', 'slug'=>'bentonite', 'desc'=>'Versatile clay mineral essential for foundry, drilling mud, pelletizing, and construction applications.', 'img'=>'img/bentonite-small.png', 'category'=>'Industrial'],
-                ['name'=>'Calcium Carbonate', 'slug'=>'calcium-carbonate', 'desc'=>'Essential mineral for plastics, paper, paints, adhesives, and sealants with excellent whiteness.', 'img'=>'img/calcium-carbonates_calcite-small.png', 'category'=>'Industrial'],
-                ['name'=>'Calcium Hydroxide', 'slug'=>'calcium-hydroxide', 'desc'=>'Key chemical for water treatment, construction, and various industrial chemical processes.', 'img'=>'img/calcium-hydroxides_hydrated-lime-small.png', 'category'=>'Chemical'],
-                ['name'=>'Calcium Oxide', 'slug'=>'calcium-oxide', 'desc'=>'Critical component in steel manufacturing, construction, and chemical production industries.', 'img'=>'img/calcium-oxides_quick-lime-small.png', 'category'=>'Chemical'],
-                ['name'=>'China Clay', 'slug'=>'china-clay', 'desc'=>'Premium kaolin essential for ceramics, paper coating, paints, rubber, and pharmaceutical applications.', 'img'=>'img/china-clay_kaolin-small.png', 'category'=>'Industrial'],
-                ['name'=>'Dolomite', 'slug'=>'dolomite', 'desc'=>'Versatile mineral for glass manufacturing, ceramics, agriculture, and construction materials.', 'img'=>'img/dolomite-small.png', 'category'=>'Industrial'],
-                ['name'=>'Magnesium Oxide', 'slug'=>'magnesium-oxide', 'desc'=>'High-purity mineral for refractory materials, agriculture supplements, and chemical industries.', 'img'=>'img/Magnesium-oxide_carbonates.png', 'category'=>'Chemical'],
-                ['name'=>'Mica', 'slug'=>'mica', 'desc'=>'Natural mineral for electrical insulation, paints, cosmetics, and high-temperature applications.', 'img'=>'img/mica-small.png', 'category'=>'Industrial'],
-                ['name'=>'Red Oxide', 'slug'=>'red-oxide', 'desc'=>'Natural pigment for paints, coatings, construction materials, and artistic applications.', 'img'=>'img/natural-red-oxide_red-ochre-small.png', 'category'=>'Pigment'],
-                ['name'=>'Potash Feldspar', 'slug'=>'potash-feldspar', 'desc'=>'Essential flux material for ceramics, glass manufacturing, and enamel production.', 'img'=>'img/potash-feldspar_soda-feldspar-small.png', 'category'=>'Industrial'],
-                ['name'=>'Quartz', 'slug'=>'quartz', 'desc'=>'High-silica mineral for glass production, electronics, construction, and industrial applications.', 'img'=>'img/Quartz-small.png', 'category'=>'Industrial'],
-                ['name'=>'Soapstone (Talc)', 'slug'=>'soapstone-talc', 'desc'=>'Soft mineral for ceramics, plastics, rubber, cosmetics, and industrial applications.', 'img'=>'img/Soapstone_Talc-small.png', 'category'=>'Industrial'],
-                ['name'=>'Whiting', 'slug'=>'whiting', 'desc'=>'High-purity calcium carbonate used as filler and coating pigment in various industries.', 'img'=>'img/Whiting-small.png', 'category'=>'Industrial']
-            ];
-
-            foreach ($products as $index => $product) {
-                ?>
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="product-card">
-                        <div class="category-badge"><?= $product['category']; ?></div>
-                        <div class="product-img-wrapper">
-                            <img src="<?= $product['img']; ?>" alt="<?= $product['name']; ?>" loading="lazy">
+            <div class="row g-4">
+                <!-- Industry 1: Paint & Coatings -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Paint & Coatings</span>
+                        <div class="position-relative">
+                            <img src="industries/Paint-Industry_Surface-Coating_Glaze-Industry_Abrasives1.jpg" class="industry-image" alt="Paint Industry">
+                            <div class="image-overlay"></div>
                         </div>
-                        <div class="product-content">
-                            <h3 class="product-title"><?= $product['name']; ?></h3>
-                            <p class="product-description"><?= $product['desc']; ?></p>
-                            <a href="<?= $product['slug']; ?>.php" class="btn btn-view-details">
-                                View Details <i class="fas fa-arrow-right"></i>
-                            </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Paint, Surface Coating & Abrasives Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-oxides_quick-lime.php" class="mineral-link">Calcium Oxide / Quick Lime</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="natural-red-oxide.php" class="mineral-link">Red Ocher / Natural Red Oxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="soapstone_talc-whiteness.php" class="mineral-link">Soapstone / Talc</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="whiting.php" class="mineral-link">Whiting Powder</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
-                <?php
-            }
-            ?>
+
+                <!-- Industry 2: Plastics & Rubber -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Plastics & Rubber</span>
+                        <div class="position-relative">
+                            <img src="industries/Plastics-Polymer-and-Cable-Industry_Rubber-&-Adhesives-Industry1..jpg" class="industry-image" alt="Plastics Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Plastics, Polymer, Cable & Rubber Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="barytes.php" class="mineral-link">Barytes / Barite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="china-clay.php" class="mineral-link">Kaoline / China Clay</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="potash-feldspar.php" class="mineral-link">Feldspar</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 3: Agriculture -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Agriculture</span>
+                        <div class="position-relative">
+                            <img src="industries/Agricultural-Fertilizer-Industry_Pesticides-Industry1.jpg" class="industry-image" alt="Agriculture Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Agricultural, Fertilizer & Pesticides Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="bentonite.php" class="mineral-link">Bentonite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="china-clay.php" class="mineral-link">Kaolin / China Clay</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 4: Construction -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Construction</span>
+                        <div class="position-relative">
+                            <img src="industries/Construction-Engineering_Cement-Industry_Foundary-Sand-Casting1.jpg" class="industry-image" alt="Construction Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Construction, Cement & Foundry Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="barytes.php" class="mineral-link">Barytes / Barite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="bentonite.php" class="mineral-link">Bentonite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-carbonates.php" class="mineral-link">Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcite</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 5: Pharmaceuticals -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Pharmaceuticals</span>
+                        <div class="position-relative">
+                            <img src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg" class="industry-image" alt="Pharmaceutical Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Pharmaceutical, Nutraceutical & Chemical Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="barytes.php" class="mineral-link">Barytes / Barite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="bentonite.php" class="mineral-link">Bentonite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 6: Water Treatment -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Water Treatment</span>
+                        <div class="position-relative">
+                            <img src="industries/Environmental-Applications_Water-Treatment-Plants.jpg" class="industry-image" alt="Water Treatment">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Environmental & Water Treatment Applications</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime / Calcium Hydroxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-carbonate.php" class="mineral-link">Magnesium Carbonate</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 7: Cosmetics -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Cosmetics</span>
+                        <div class="position-relative">
+                            <img src="industries/Cosmetic_Oral-Care_Skin-Care_Hair-Care-Industry.jpg" class="industry-image" alt="Cosmetics Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Cosmetic, Oral Care & Skin Care Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="barytes.php" class="mineral-link">Barytes / Barite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="bentonite.php" class="mineral-link">Bentonite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="china-clay.php" class="mineral-link">Kaoline / China Clay</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 8: Glass & Ceramic -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Glass & Ceramic</span>
+                        <div class="position-relative">
+                            <img src="industries/Glass_Ceramic-Industry_Sanitary-ware_Tiles-Industries1.jpg" class="industry-image" alt="Glass & Ceramic Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Glass & Ceramic, Sanitary Ware & Tiles Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="barytes.php" class="mineral-link">Barytes / Barite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="china-clay.php" class="mineral-link">Kaoline / China Clay</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="potash-feldspar.php" class="mineral-link">Feldspar</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 9: Food & Beverage -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Food & Beverage</span>
+                        <div class="position-relative">
+                            <img src="industries/Food_Beverages_Food-Preservatives_Hygiene_Cleaning-Industry.jpg" class="industry-image" alt="Food & Beverage Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Food, Beverages & Hygiene Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="bentonite.php" class="mineral-link">Bentonite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime / Calcium Hydroxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 10: Animal Feed -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Animal Feed</span>
+                        <div class="position-relative">
+                            <img src="industries/Animal-Feed_Veterinary-Industry1.jpg" class="industry-image" alt="Animal Feed Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Animal Feed & Veterinary Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="soapstone-(talc).php" class="mineral-link">Soapstone / Talc</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-carbonate.php" class="mineral-link">Magnesium Carbonate</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 11: Healthcare -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Healthcare</span>
+                        <div class="position-relative">
+                            <img src="industries/Medical_Health_Dietary-Supplement_Life-Support-Systems.jpg" class="industry-image" alt="Healthcare Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Medical, Health & Dietary Supplement</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="mica.php" class="mineral-link">Mica</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime / Calcium Hydroxide</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 12: Electronics -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Electronics</span>
+                        <div class="position-relative">
+                            <img src="industries/Electricals_Electronics_Semi-Conductors_Laser-Industry.jpg" class="industry-image" alt="Electronics Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Electricals, Electronics & Semi-Conductors</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="china-clay.php" class="mineral-link">Kaoline / China Clay</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="quartz.php" class="mineral-link">Quartz</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 13: Metallurgy -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Metallurgy</span>
+                        <div class="position-relative">
+                            <img src="industries/Iron_Steel_Metallurgical_Auto-Mobiles-Industry_Sheet_Bulk-Moulding_Refractory-Industry.jpg" class="industry-image" alt="Metallurgy Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Iron, Steel, Metallurgical & Auto Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime / Calcium Hydroxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="quartz.php" class="mineral-link">Quartz</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 14: Paper & Leather -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Paper & Leather</span>
+                        <div class="position-relative">
+                            <img src="industries/Pharmaceutical-Nutraceutical-Industry_Chemical-Industries_Drying-Agent_Lubricating-Oils1.jpg" class="industry-image" alt="Paper & Leather Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Wood, Paper, Printing & Leather Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime / Calcium Hydroxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="china-clay.php" class="mineral-link">Kaoline / China Clay</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="feldspar.php" class="mineral-link">Feldspar</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Industry 15: Mining & Oil -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="industry-card">
+                        <span class="industry-badge">Mining & Oil</span>
+                        <div class="position-relative">
+                            <img src="industries/Mining-Industry_Drilling-Mud_Oil-Refineries-Industry-Uranium_Gallium_Boron-Mining-Industry_Petroleum-Reservoir-Rock-Industry.jpg" class="industry-image" alt="Mining & Oil Industry">
+                            <div class="image-overlay"></div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mining, Drilling & Oil Refineries Industry</h5>
+                            <ul class="minerals-list">
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="bentonite.php" class="mineral-link">Bentonite</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="limestone-calcite.php" class="mineral-link">Limestone / Calcium Carbonate</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="calcium-hydroxides.php" class="mineral-link">Hydrated Lime / Calcium Hydroxide</a></li>
+                                <li><i class="fas fa-check-circle mineral-icon"></i> <a href="magnesium-oxide.php" class="mineral-link">Magnesium Oxide</a></li>
+                            </ul>
+                            <a href="ourProducts.php" class="view-all-minerals">View All Minerals <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
+    </section>
 
-        <div class="text-center mt-5 pt-4">
-            <p class="text-muted">Can't find what you're looking for? <a href="contact.php" class="text-primary fw-semibold">Contact our team</a> for custom mineral solutions.</p>
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="cta-title">Need Industry-Specific Mineral Solutions?</h2>
+                    <p class="cta-text">Contact RMCL for customized mineral grades, bulk supply, and technical support tailored to your industry requirements.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="contact.php" class="btn cta-btn">
+                        Contact Our Experts <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<?php include 'footer.php'; ?>
+    <!-- FOOTER -->
+    <?php include 'footer.php'; ?>
 
-<script>
-    // Add interactive hover effects
-    document.addEventListener('DOMContentLoaded', function() {
-        const productCards = document.querySelectorAll('.product-card');
-        
-        productCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.zIndex = '10';
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Simplified JavaScript since filter functionality is removed
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animation on scroll for industry cards
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Apply animation to industry cards
+            const industryCards = document.querySelectorAll('.industry-card');
+            industryCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                card.style.transitionDelay = (index % 3) * 0.1 + 's';
+                observer.observe(card);
             });
             
-            card.addEventListener('mouseleave', function() {
-                this.style.zIndex = '1';
-            });
+            // Initialize all cards as visible
+            setTimeout(() => {
+                industryCards.forEach(card => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                });
+            }, 100);
         });
-    });
-</script>
-
+    </script>
 </body>
 </html>
