@@ -884,7 +884,9 @@
                                 </div>
                                 <div class="contact-content">
                                     <h5>Our Location</h5>
-                                    <p>Rajasthan, India<br>Mineral Industrial Area</p>
+                                    <p>
+                                    20, Harihar Society, Sainath Road, 
+                                </br>PETLAD - 388450. Anand. (Guj.) INDIA</p>
                                 </div>
                             </div>
 
