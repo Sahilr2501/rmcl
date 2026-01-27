@@ -21,11 +21,92 @@
       background-color: #f8f9fa;
     }
 
-    .hero {
-      background: #0d6efd;
-      color: #fff;
-      padding: 60px 0;
+    /* HERO IMAGE ONLY - NO TEXT */
+    .hero-image-container {
+      width: 100%;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-image-container img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* Responsive height adjustments */
+    @media (max-width: 1200px) {
+      .hero-image-container img {
+        max-height: 450px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-image-container img {
+        max-height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-image-container img {
+        max-height: 350px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-image-container img {
+        max-height: 300px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero-image-container img {
+        max-height: 250px;
+      }
+    }
+
+    /* TEXT CONTENT SECTION AFTER IMAGE */
+    .content-section {
+      padding: 60px 0 30px;
       text-align: center;
+    }
+
+    .content-section h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: #0d6efd;
+      margin-bottom: 20px;
+    }
+
+    .content-section .lead {
+      font-size: 20px;
+      color: #495057;
+      max-width: 800px;
+      margin: 0 auto 25px;
+      line-height: 1.6;
+    }
+
+    .warning-note {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: left;
+      font-size: 16px;
+      color: #856404;
+    }
+
+    .warning-icon {
+      color: #ffc107;
+      margin-right: 8px;
+      font-size: 1.2rem;
     }
 
     .form-card {
@@ -38,70 +119,7 @@
       color: red;
     }
 
-    .sds-hero {
-      position: relative;
-      min-height: 420px;
-      display: flex;
-      align-items: center;
-      background: url('images/sds-hero.jpg') center/cover no-repeat;
-      color: #fff;
-    }
-
-    .sds-hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.65);
-    }
-
-    .sds-content {
-      position: relative;
-      max-width: 900px;
-    }
-
-    .sds-content h1 {
-      font-size: 42px;
-      font-weight: 700;
-      margin-bottom: 12px;
-    }
-
-    .red-line {
-      width: 120px;
-      height: 4px;
-      background: #0d6efd;
-      margin: 15px 0 25px;
-    }
-
-    .sds-content .lead {
-      font-size: 18px;
-      margin-bottom: 18px;
-      color: #f1f1f1;
-    }
-
-    .sds-content .note {
-      font-size: 16px;
-      color: #ddd;
-      margin-bottom: 30px;
-    }
-
-    .warning-icon {
-      color: #ffc107;
-      margin-right: 6px;
-    }
-
-    .sds-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-    }
-
-    .sds-actions .btn {
-      padding: 12px 22px;
-      font-weight: 600;
-      border-radius: 6px;
-    }
-
-    /* NEW FORM STYLES */
+    /* FORM STYLES */
     .form-container {
       max-width: 900px;
       margin: 0 auto;
@@ -236,21 +254,16 @@
     
     /* MOBILE */
     @media (max-width: 768px) {
-      .sds-content h1 {
-        font-size: 30px;
+      .content-section {
+        padding: 40px 0 20px;
       }
 
-      .sds-content .lead {
-        font-size: 16px;
+      .content-section h1 {
+        font-size: 32px;
       }
 
-      .sds-actions {
-        flex-direction: column;
-      }
-
-      .sds-actions .btn {
-        width: 100%;
-        text-align: center;
+      .content-section .lead {
+        font-size: 18px;
       }
       
       .form-body {
@@ -274,44 +287,49 @@
         width: 100%;
       }
     }
+    
+    @media (max-width: 576px) {
+      .content-section h1 {
+        font-size: 28px;
+      }
+      
+      .content-section .lead {
+        font-size: 16px;
+      }
+      
+      .warning-note {
+        padding: 12px 15px;
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 
 <body>
   <?php include 'nav.php'; ?>
 
-  <!-- SDS & TDS HERO -->
-  <section class="sds-hero">
+  <!-- HERO IMAGE ONLY - NO TEXT -->
+  <section class="hero-image-container">
+    <img src="images/tds-banner.jpg" 
+         alt="SDS & TDS Request"
+         loading="eager">
+  </section>
+
+  <!-- TEXT CONTENT SECTION (BELOW THE IMAGE) -->
+  <section class="content-section">
     <div class="container">
-      <div class="sds-content">
-
-        <h1>SDS &amp; TDS Request</h1>
-        <div class="red-line"></div>
-
-        <p class="lead">
-          Safety Data Sheets (SDS) and Technical Data Sheets (TDS) provide essential
-          safety, handling, and performance information for our chemical products.
-        </p>
-
-        <p class="note">
-          <span class="warning-icon">⚠</span>
-          Existing customers may request SDS/TDS by phone or email.
-          New customers can submit the request form below and our team will assist you promptly.
-        </p>
-
-      </div>
+      <h1>Technical Data Sheets (TDS)</h1>
+      
+      <p class="lead">
+        Technical Data Sheets (TDS) provide essential 
+        safety, handling, and performance information for our chemical products.
+      </p>
     </div>
   </section>
 
   <!-- FORM SECTION -->
   <div class="form-container">
     <div class="form-section-card">
-      <!-- Form Header -->
-      <div class="form-header-section">
-        <h2><i class="bi bi-file-earmark-text me-2"></i>SDS & TDS Request Form</h2>
-        <p>Complete this form to request Safety Data Sheets or Technical Data Sheets for our products</p>
-      </div>
-      
       <!-- Form Body -->
       <div class="form-body">
         <form action="sds-tds-request.php" method="post">
