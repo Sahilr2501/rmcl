@@ -199,7 +199,7 @@
         </li>
 
         <li>
-          <!-- <a href="test.php">Test Button </a> -->
+          <a href="test.php">Test Button </a>
         </li>
       </ul>
     </div>

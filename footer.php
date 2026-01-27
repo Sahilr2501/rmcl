@@ -87,18 +87,14 @@
       <!-- PRODUCTS -->
       <div class="col-lg-3 col-md-4">
         <h6>Speciality Minerals</h6>
-        <a href="barytes.html" class="footer-link">Barytes</a>
-        <a href="bentonite.html" class="footer-link">Bentonite</a>
-        <a href="feldspar.html" class="footer-link">Feldspar / Quartz</a>
-        <a href="whiting.html" class="footer-link">Whiting Powder</a>
-        <li><a class="dropdown-item" href="calcium-hydroxides.php">Calcium Hydroxide/ Hydrated Lime</a></li>
-            <li><a class="dropdown-item" href="calcium-carbonates.php">Calcium Carbonate/ Calcite</a></li>
-            <li><a class="dropdown-item" href="china-clay.php">China Clay/ Kaolin</a></li>
-            <li><a class="dropdown-item" href="dolomite.php">Dolomite /Calcined Dolomite</a></li>
-            <li><a class="dropdown-item" href="potash-feldspar.php">Feldspar/ Quartz</a></li>
-            <li><a class="dropdown-item" href="magnesium-oxide.php">Magnesium Oxide / Carbonates</a></li>
-            <li><a class="dropdown-item" href="natural-red-oxide.php">Red Ochre/ Natural Red Oxide</a></li>
-            <li><a class="dropdown-item" href="soapstone-(talc).php">Soap stone/ Talc</a></li>
+        <a href="calcium-hydroxides.php" class="footer-link">Calcium Hydroxide/ Hydrated Lime</a>
+        <a href="calcium-carbonates.php" class="footer-link">Calcium Carbonate/ Calcite</a>
+        <a href="china-clay.php" class="footer-link">China Clay/ Kaolin</a>
+        <a href="dolomite.php" class="footer-link">Dolomite /Calcined Dolomite</a>
+        <a href="potash-feldspar.php" class="footer-link">Feldspar/ Quartz</a>
+        <a href="magnesium-oxide.php" class="footer-link">Magnesium Oxide / Carbonates</a>
+        <a href="natural-red-oxide.php" class="footer-link">Red Ochre/ Natural Red Oxide</a>
+        <a href="soapstone-(talc).php" class="footer-link">Soap stone/ Talc</a>
       </div>
 
       <!-- CONTACT -->

@@ -18,101 +18,96 @@
 			background-color: #f8f9fa;
 		}
 
-		.sds-hero {
-		position: relative;
-		min-height: 420px;
-		display: flex;
-		align-items: center;
-		background: url('images/sds-hero.jpg') center/cover no-repeat;
-		color: #fff;
-		}
-
-		.sds-hero::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background: rgba(0, 0, 0, 0.65);
-		}
-
-		.sds-content {
-		position: relative;
-		max-width: 900px;
-		}
-
-		.sds-content h1 {
-		font-size: 42px;
-		font-weight: 700;
-		margin-bottom: 12px;
-		}
-
-		.red-line {
-		width: 120px;
-		height: 4px;
-		background: #0d6efd;
-		margin: 15px 0 25px;
-		}
-
-		.sds-content .lead {
-		font-size: 18px;
-		margin-bottom: 18px;
-		color: #f1f1f1;
-		}
-
-		.sds-content .note {
-		font-size: 16px;
-		color: #ddd;
-		margin-bottom: 30px;
-		}
-
-		.warning-icon {
-		color: #ffc107;
-		margin-right: 6px;
-		}
-
-		.sds-actions {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 15px;
-		}
-
-		.sds-actions .btn {
-		padding: 12px 22px;
-		font-weight: 600;
-		border-radius: 6px;
-		}
-
-		/* MOBILE */
-		@media (max-width: 768px) {
-		.sds-content h1 {
-			font-size: 30px;
-		}
-
-		.sds-content .lead {
-			font-size: 16px;
-		}
-
-		.sds-actions {
-			flex-direction: column;
-		}
-
-		.sds-actions .btn {
+		/* HERO IMAGE ONLY - NO TEXT */
+		.hero-image-container {
 			width: 100%;
+			background: #000;
+			overflow: hidden;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.hero-image-container img {
+			width: 100%;
+			height: auto;
+			max-height: 500px;
+			object-fit: contain;
+			display: block;
+		}
+
+		/* Responsive height adjustments */
+		@media (max-width: 1200px) {
+			.hero-image-container img {
+				max-height: 450px;
+			}
+		}
+
+		@media (max-width: 992px) {
+			.hero-image-container img {
+				max-height: 400px;
+			}
+		}
+
+		@media (max-width: 768px) {
+			.hero-image-container img {
+				max-height: 350px;
+			}
+		}
+
+		@media (max-width: 576px) {
+			.hero-image-container img {
+				max-height: 300px;
+			}
+		}
+
+		@media (max-width: 400px) {
+			.hero-image-container img {
+				max-height: 250px;
+			}
+		}
+
+		/* TEXT CONTENT SECTION AFTER IMAGE */
+		.content-section {
+			padding: 60px 0 30px;
 			text-align: center;
 		}
+
+		.content-section h1 {
+			font-size: 42px;
+			font-weight: 700;
+			color: #0d6efd;
+			margin-bottom: 20px;
 		}
 
+		.content-section .lead {
+			font-size: 20px;
+			color: #495057;
+			max-width: 800px;
+			margin: 0 auto 25px;
+			line-height: 1.6;
+		}
+
+		.content-section .note {
+			font-size: 16px;
+			color: #666;
+			max-width: 800px;
+			margin: 30px auto;
+			text-align: center;
+			line-height: 1.6;
+		}
 
 		/* Enable hover dropdown (desktop only) */
 		@media (min-width: 992px) {
-		.navbar .dropdown:hover > .dropdown-menu {
-			display: block;
-			margin-top: 0;
-		}
+			.navbar .dropdown:hover > .dropdown-menu {
+				display: block;
+				margin-top: 0;
+			}
 		}
 
 		/* Smooth animation */
 		.dropdown-menu {
-		transition: all 0.25s ease;
+			transition: all 0.25s ease;
 		}
 
 		.contact-card {
@@ -172,6 +167,35 @@
 			text-decoration: underline;
 		}
 
+		/* MOBILE */
+		@media (max-width: 768px) {
+			.content-section {
+				padding: 40px 0 20px;
+			}
+
+			.content-section h1 {
+				font-size: 32px;
+			}
+
+			.content-section .lead {
+				font-size: 18px;
+			}
+
+			.content-section .note {
+				font-size: 15px;
+			}
+		}
+
+		@media (max-width: 576px) {
+			.content-section h1 {
+				font-size: 28px;
+			}
+			
+			.content-section .lead {
+				font-size: 16px;
+			}
+		}
+
 	</style>
 </head>
 
@@ -180,29 +204,24 @@
 	<!-- NAVBAR -->
     <?php include 'nav.php'; ?>
 
-	<!-- HERO -->
-	<section class="sds-hero">
-    <div class="container">
-      <div class="sds-content">
+	<!-- HERO IMAGE ONLY - NO TEXT -->
+	<section class="hero-image-container">
+		<img src="images/contact-us.jpg" 
+			 alt="Contact Us - Rajasthan Minerals & Chemicals"
+			 loading="eager">
+	</section>
 
-        <h1>Contact US</h1>
-        <div class="red-line"></div>
-
-        <p class="lead">
-		We’re here to support your business needs with reliable products,
-        technical expertise, and prompt assistance.
-        </p>
-
-        <p class="note">
-		Whether you’re looking for product information, technical support,
-        or a customized solution, our team at Rajasthan Minerals & Chemicals
-        is ready to help. Reach out to us via phone, email, or the contact form below.
-        </p>
-
-      </div>
-    </div>
-  </section>
-
+	<!-- TEXT CONTENT SECTION (BELOW THE IMAGE) -->
+	<section class="content-section">
+		<div class="container">
+			<h1>Contact Us</h1>
+			
+			<p class="lead">
+				We're here to support your business needs with reliable products,
+				technical expertise, and prompt assistance.
+			</p>
+		</div>
+	</section>
 
 	<!-- CONTACT SECTION -->
 	<section class="py-5">
