@@ -151,7 +151,7 @@
             <li><a class="dropdown-item" href="calcium-carbonates.php">Calcium Carbonate/ Calcite</a></li>
             <li><a class="dropdown-item" href="china-clay.php">China Clay/ Kaolin</a></li>
             <li><a class="dropdown-item" href="dolomite.php">Dolomite /Calcined Dolomite</a></li>
-            <li><a class="dropdown-item" href="potash-feldspar.php">Feldspar/ Quartz</a></li>
+            <li><a class="dropdown-item" href="potash-feldspar.php">Potash & Soda Feldspar</a></li>
             <li><a class="dropdown-item" href="magnesium-oxide.php">Magnesium Oxide / Carbonates</a></li>
             <li><a class="dropdown-item" href="natural-red-oxide.php">Red Ochre/ Natural Red Oxide</a></li>
             <li><a class="dropdown-item" href="soapstone-(talc).php">Soap stone/ Talc</a></li>
