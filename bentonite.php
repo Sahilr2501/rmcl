@@ -125,7 +125,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Bentonite Clay – (Al, Fe₀.₆₇ Mg₀.₃₃) Si₄O₁₀(OH)₂ Na,Ca₀.₃₃
+                            Bentonite Clay
                         </h1>
 
                         <p><strong>Formula : (Al, Fe₀.₆₇ Mg₀.₃₃) Si₄O₁₀(OH)₂ Na,Ca₀.₃₃</strong></p>

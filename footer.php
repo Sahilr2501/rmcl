@@ -91,10 +91,6 @@
         <a href="calcium-carbonates.php" class="footer-link">Calcium Carbonate/ Calcite</a>
         <a href="china-clay.php" class="footer-link">China Clay/ Kaolin</a>
         <a href="dolomite.php" class="footer-link">Dolomite /Calcined Dolomite</a>
-        <a href="potash-feldspar.php" class="footer-link">Feldspar/ Quartz</a>
-        <a href="magnesium-oxide.php" class="footer-link">Magnesium Oxide / Carbonates</a>
-        <a href="natural-red-oxide.php" class="footer-link">Red Ochre/ Natural Red Oxide</a>
-        <a href="soapstone-(talc).php" class="footer-link">Soap stone/ Talc</a>
       </div>
 
       <!-- CONTACT -->

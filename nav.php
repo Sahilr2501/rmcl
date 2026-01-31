@@ -137,7 +137,7 @@
 
         <!-- INDUSTRIES -->
         <li class="nav-item">
-          <a class="nav-link" href="industries-we-serve.php">Industries We Serve</a>
+          <a class="nav-link" href="industries-we-serve.php">Industries</a>
         </li>
 
         <!-- SPECIALTY MINERALS -->

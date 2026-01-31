@@ -14,7 +14,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             background-color: #f8f9fa;
         }
 
@@ -128,7 +128,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Calcium Oxide / Quicklime – CaO
+                            Calcium Oxide / Quicklime
                         </h1>
 
                         <p><strong>Formula : CaO</strong></p>

@@ -14,7 +14,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             background-color: #f8f9fa;
         }
 

@@ -14,7 +14,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             background-color: #f8f9fa;
         }
 
@@ -125,7 +125,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Tricalcium Phosphate – Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub>
+                            Tricalcium Phosphate
                         </h1>
 
                         <p><strong>Formula : Ca<sub>3</sub>(PO<sub>4</sub>)<sub>2</sub></strong></p>

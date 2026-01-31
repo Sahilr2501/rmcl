@@ -14,7 +14,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             background-color: #f8f9fa;
         }
 
@@ -40,7 +40,6 @@
         }
 
         .industry-title {
-            color: #0d6efd;
             font-weight: 600;
         }
 

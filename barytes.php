@@ -14,7 +14,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             background-color: #f8f9fa;
         }
 
@@ -125,7 +125,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Barytes / Barite – BaSO<sub>4</sub>
+                            Barytes / Barite
                         </h1>
 
                         <p><strong>Formula : BaSO<sub>4</sub></strong></p>

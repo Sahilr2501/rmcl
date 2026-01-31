@@ -22,7 +22,7 @@
         }
 
         body {
-            font-family: 'bookman', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             color: var(--dark);
             line-height: 1.5; /* Reduced line height */
             background-color: var(--light);

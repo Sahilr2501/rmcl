@@ -324,7 +324,7 @@
                 ?>
                 <div class="col-6 col-md-4 col-lg-3">
                     <div class="product-card">
-                        <div class="category-badge"><?= $product['category']; ?></div>
+                        
                         <div class="product-img-wrapper">
                             <img src="<?= $product['img']; ?>" alt="<?= $product['name']; ?>" loading="lazy">
                         </div>

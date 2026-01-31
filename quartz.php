@@ -14,7 +14,7 @@
 
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: "Bookman Old Style", "Bookman", "URW Bookman L", serif;
             background-color: #f8f9fa;
         }
 
@@ -125,7 +125,7 @@
                     <div class="content-box">
 
                         <h1 class="fw-bold mb-3">
-                            Quartz / Silica Powder – SiO<sub>2</sub>
+                            Quartz / Silica Powder
                         </h1>
 
                         <h5 class="fw-semibold mb-3">Description</h5>
