@@ -7,6 +7,12 @@
   }
 }
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
 /* Smooth animation */
 .dropdown-menu {
   transition: all 0.25s ease;
@@ -136,9 +142,7 @@
         </li>
 
         <!-- INDUSTRIES -->
-        <li class="nav-item">
-          <a class="nav-link" href="industries-we-serve.php">Industries</a>
-        </li>
+        
 
         <!-- SPECIALTY MINERALS -->
         <li class="nav-item dropdown">
@@ -185,11 +189,16 @@
             <li><a class="dropdown-item" href="bentonite.php">Bentonite</a></li>
           </ul>
         </li>
+  <li class="nav-item">
+          <a class="nav-link" href="industries-we-serve.php">Industries We Serve</a>
+        </li>
 
         <!-- CONTACT -->
         <li class="nav-item">
           <a class="nav-link" href="sds&tds.php">Request TDS</a>
         </li>
+
+        
 
         <!-- ISO CERTIFICATE BUTTON - Opens PDF directly -->
         <li class="nav-item ms-lg-2 mt-2 mt-lg-0">

@@ -51,14 +51,14 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com'; // change if needed
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'sahilmondal9879@gmail.com'; // CHANGE
-    $mail->Password   = 'lpwb tkmh zovg bzbc';    // CHANGE
+    $mail->Username   = 'contact.rmclindia@gmail.com'; // CHANGE
+    $mail->Password   = 'uifb smhf otkl mpuc';    // CHANGE
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
     // EMAIL HEADERS
     $mail->setFrom('no-reply@rmcl.co.in', 'RMCL Website');
-    $mail->addAddress('contact@rmcl.co.in', 'RMCL SDS/TDS Team');
+    $mail->addAddress('contact.rmclindia@gmail.com', 'RMCL SDS/TDS Team');
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(true);
@@ -101,12 +101,12 @@ HTML;
     $auto->isSMTP();
     $auto->Host       = 'smtp.gmail.com';
     $auto->SMTPAuth   = true;
-    $auto->Username   = 'sahilmondal9879@gmail.com'; // SAME
-    $auto->Password   = 'lpwb tkmh zovg bzbc';
+    $auto->Username   = 'contact.rmclindia@gmail.com'; // SAME
+    $auto->Password   = 'uifb smhf otkl mpuc';
     $auto->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $auto->Port       = 587;
 
-    $auto->setFrom('contact@rmcl.co.in', 'Rajasthan Minerals & Chemicals');
+    $auto->setFrom('contact.rmclindia@gmail.com', 'Rajasthan Minerals & Chemicals');
     $auto->addAddress($email, $name);
     $auto->isHTML(true);
 
@@ -141,7 +141,7 @@ HTML;
     Regards,<br>
     <strong>Rajasthan Minerals & Chemicals</strong><br>
     📞 +91-2697-222337<br>
-    ✉ contact@rmcl.co.in
+    ✉ contact.rmclindia@gmail.com
   </p>
 </div>
 HTML;

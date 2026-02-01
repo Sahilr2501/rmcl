@@ -33,14 +33,14 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.gmail.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'sahilmondal9879@gmail.com';   // 🔴 replace
-    $mail->Password   = 'lpwb tkmh zovg bzbc';      // 🔴 replace
+    $mail->Username   = 'contact.rmclindia@gmail.com';   // 🔴 replace
+    $mail->Password   = 'uifb smhf otkl mpuc';      // 🔴 replace
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
 
     // EMAIL SETTINGS
-    $mail->setFrom('sahilmondal9879@gmail.com', 'RMCL Website');
-    $mail->addAddress('contact@rmcl.co.in');
+    $mail->setFrom('contact.rmclindia@gmail.com', 'RMCL Website');
+    $mail->addAddress('contact.rmclindia@gmail.com');
     // $mail->addAddress('j.jani@rmcl.co.in');
     $mail->addReplyTo($email, $name);
 

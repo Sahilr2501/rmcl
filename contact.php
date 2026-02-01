@@ -259,7 +259,7 @@
 							<div class="contact-row">
 								<span class="label">✉️ Email</span>
 								<span class="value">
-									<a href="mailto:contact@rmcl.co.in">contact@rmcl.co.in</a>
+									<a href="mailto:contact.rmclindia@gmail.com">contact.rmclindia@gmail.com</a>
 								</span>
 							</div>
 						</div>
